@@ -16,6 +16,7 @@ windows_usb_printer: ^0.0.1
 #### 1.搜索本机已安装的打印机驱动
 ```dart
 List<WindowsPrinterInfo> printerList = await WindowsUsbPrinterProvider.queryLocalUsbDevice()
+
 for (var printer in printerList) {
   // 打印已安装驱动的打印机名称
   log(printer.pPrinterName);
@@ -27,6 +28,7 @@ for (var printer in printerList) {
 ```dart
 // pPrinterName 即上面方法获取到的打印机名称
 // data 是打印内容的字节数据，类型为 List<int>
+
 WindowsUsbPrinterProvider.usbWrite(pPrinterName,data)
 ```
 
